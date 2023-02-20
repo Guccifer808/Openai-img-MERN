@@ -69,7 +69,7 @@ const CreateImage = () => {
             labelName="Prompt"
             name="prompt"
             type="text"
-            placeholder="A Synthwave Hedgehog, Blade Runner Cyberpunk'"
+            placeholder="A surrealist painting of a clock melting in a barren desert"
             value={form.prompt}
             handleChange={handleChange}
             isSurpriseMe

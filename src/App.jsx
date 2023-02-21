@@ -10,16 +10,18 @@ const App = () => {
           <img src={logo} alt={logo} className="w-28 object-contain" />
         </Link>
         <Link
-          to="/create-post"
+          to="https://github.com/Guccifer808"
+          target="_blank"
+          rel="noreferrer"
           className="rounded-md bg-[#6469ff] px-4 py-2 font-inter font-medium text-white hover:scale-105"
         >
-          Create
+          Github
         </Link>
       </header>
       <main className="min-h-[calc(100vh-73px)] w-full bg-[#f9fafe] px-4 py-8 sm:p-8">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/create-post" element={<CreateImage />} />
+          <Route path="/" element={<CreateImage />} />
+          {/* <Route path="/create-post" element={<CreateImage />} /> */}
         </Routes>
       </main>
     </BrowserRouter>

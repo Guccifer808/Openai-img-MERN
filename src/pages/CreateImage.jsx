@@ -79,14 +79,14 @@ const CreateImage = () => {
 
       <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-5">
-          <Form
+          {/* <Form
             labelName="Your name"
             name="name"
             type="text"
             placeholder="John Smith"
             value={form.name}
             handleChange={handleChange}
-          />
+          /> */}
           <Form
             labelName="Prompt"
             name="prompt"
@@ -98,7 +98,7 @@ const CreateImage = () => {
             handleSurpriseMe={handleSurpriseMe}
           />
           {/* div where image will be shown */}
-          <div className="relative h-64 w-64 items-center justify-center rounded-md border-gray-300 bg-stone-50 p-3 text-sm text-slate-900 focus:border-blue-500 focus:ring-blue-500">
+          <div className="relative flex h-96 w-96 items-center justify-center rounded-md border-gray-300 bg-stone-50 p-3 text-sm text-slate-900 focus:border-blue-500 focus:ring-blue-500">
             {form.photo ? (
               <img
                 src={form.photo}
@@ -132,7 +132,7 @@ const CreateImage = () => {
           </button>
         </div>
         {/* Share */}
-        <div className="mt-10">
+        {/* <div className="mt-10">
           <p className="mt-2 text-[14px] text-gray-400">
             If you love this OpenAI generated image, you can share it with
             others
@@ -143,7 +143,7 @@ const CreateImage = () => {
           >
             {loading ? "Sharing..." : "Share it with others"}
           </button>
-        </div>
+        </div> */}
       </form>
     </section>
   );

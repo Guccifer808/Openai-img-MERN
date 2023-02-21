@@ -15,6 +15,32 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [images, setImages] = useState(null);
   const [searchText, setSearchText] = useState("");
+
+  // get all images to front page
+  useEffect(() => {
+    const fetchImages = async () => {
+      setLoading(true);
+
+      try {
+        const response = await fetch("http://localhost:8080/api/v1/image", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          setImages(result.data.reverse());
+        }
+      } catch (error) {
+        alert(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchImages();
+  });
   return (
     <section className="mx-auto max-w-7xl">
       <div>
@@ -43,7 +69,7 @@ const Home = () => {
               {searchText ? (
                 <RenderCards data={[]} title="No images found" />
               ) : (
-                <RenderCards data={[]} title="No images found" />
+                <RenderCards data={images} title="No images found" />
               )}
             </div>
           </>
